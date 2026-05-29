@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Database, BarChart3, Route, Bell, Shield, Zap, Check } from 'lucide-react';
+import { ArrowRight, Database, BarChart3, Route, Bell, Shield, Zap } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight, Train, Activity, FileText, ClipboardCheck, Clock,
+  ArrowRight, Train, Activity, FileText, Clock,
   Check, Shield, AlertTriangle, ShieldCheck, Headphones, Gavel, ChevronRight, BarChart3,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';

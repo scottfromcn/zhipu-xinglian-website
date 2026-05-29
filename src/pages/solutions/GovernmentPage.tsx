@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight, Building2, Headphones, FileText, Users, Check,
-  MessageSquare, BookOpen, ClipboardList, ChevronRight,
+  ArrowRight, Building2, Headphones, FileText, Check,
+  BookOpen, ClipboardList, ChevronRight,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
