@@ -90,3 +90,15 @@
 - 发布前发现 Vite 使用相对资源路径；已将 `base` 改为 `/`，避免生产二级路由直达时错误请求 `/solutions/assets/`。
 - 新增 `docs/DEPLOYMENT.md` 记录已有资源、构建、推送、手动部署与验收方式。
 - 验收方案：构建和资源路径检查通过，推送后远端提交一致，Cloudflare 生产部署成功，正式域名首页及产品二级路由可加载且呈现新内容。
+
+### 发布结果与验收
+
+- 应用代码提交：`4b7edfb665bab1e5e0d97f5a18aa8234e36491e6`；已成功推送 GitHub `main`，包含前两轮业务与可信定位更新。
+- 原 Cloudflare Pages 项目已更新生产部署，未新建项目；部署 ID：`f7204d3c-c425-46ad-82b7-6078490e2aa4`。
+- 部署地址：`https://f7204d3c.zhipu-xinglian.pages.dev`；正式地址：`https://suzhouzp.top`。
+- Cloudflare API 确认 canonical deployment 为上述部署，环境 production、状态 success、应用提交一致、工作区 dirty=false。
+- `npm run build`、`npx eslint vite.config.ts`、`git diff --check` 均通过；构建资源使用 `/assets/` 根路径，SPA 回退文件已上传。
+- HTTPS 验收：正式域名和 www 首页、`/industrial-platform`、`/solutions/industrial`、`/office-ai` 均返回 200；去除 Cloudflare 自动注入的访问统计脚本及空白差异后，HTML 与本次构建一致；JS/CSS 与本地构建逐字节一致。Pages 默认域名也已通过 HTML 与资源一致性验证。
+- 部分代理请求发生 403 或 TLS 超时；改用正常浏览器 User-Agent 并通过直连复验后，上述正式域名及资源均通过；未修改任何安全配置。
+- 浏览器已打开正式站点并返回新版标题，但本轮 AX/DOM 验收接口连续超时，因此不将线上视觉复验记为通过。上一轮本地桌面/手机视觉与交互验收已通过，本轮线上完成 HTTP、路由、构建资源一致性和部署状态验证。
+- 本条发布结果作为文档提交另行推送；不改变已部署的应用代码，Cloudflare 对应应用提交仍为 `4b7edfb`。
