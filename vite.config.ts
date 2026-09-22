@@ -5,7 +5,8 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  // Root-hosted SPA: nested routes must resolve bundles from /assets/.
+  base: '/',
   plugins: [inspectAttr(), react()],
   server: {
     port: 3000,

@@ -78,3 +78,15 @@
 - 目视检查手机首页、桌面两种交付卡片和 OfficeAI 可信章节：文字完整，无重叠遮挡。
 - 演示清单实际生成验证：OfficeAI 显示“全部私有化部署”，工业平台显示“SaaS 或私有化一体机”，二者都写入三层可信要求。
 - 恢复本地预览服务：`http://127.0.0.1:3000/`；仅更新本地官网，未部署线上。
+
+## 2026-09-22：发布 GitHub 与原 Cloudflare 站点
+
+### 发布目标与计划
+
+- 用户明确要求推送 GitHub 并更新已有 Cloudflare 部署。
+- 已核对 GitHub：`scottfromcn/zhipu-xinglian-website`，`main` 远端原提交 `5aa0280`，本地领先 3 个提交。
+- 已核对 Cloudflare：已有 Pages 项目 `zhipu-xinglian`，生产分支 `main`，Direct Upload；绑定 `suzhouzp.top`、`www.suzhouzp.top`。
+- 原生产部署：`a8fed14c-6a66-4790-a78a-29999a5d668b`，2026-05-29，状态 success。
+- 发布前发现 Vite 使用相对资源路径；已将 `base` 改为 `/`，避免生产二级路由直达时错误请求 `/solutions/assets/`。
+- 新增 `docs/DEPLOYMENT.md` 记录已有资源、构建、推送、手动部署与验收方式。
+- 验收方案：构建和资源路径检查通过，推送后远端提交一致，Cloudflare 生产部署成功，正式域名首页及产品二级路由可加载且呈现新内容。
