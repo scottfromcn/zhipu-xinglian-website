@@ -7,10 +7,10 @@ export const navigation = [
 ];
 
 export const officeModules = [
-  { id: 'tokenhub', name: 'TokenHub', role: '模型资源中枢', desc: '统一模型接入、额度分配、用量统计与成本管理，让模型资源按需配置、使用有据。', features: ['模型统一接入', '部门与项目配额', '用量与成本管理'] },
-  { id: 'skillhub', name: 'SkillHub', role: '企业技能中心', desc: '将办公流程、专业规则与业务经验沉淀为可复用的技能，支撑团队共享和持续完善。', features: ['办公技能沉淀', '技能版本管理', '组织内共享复用'] },
-  { id: 'agent-admin', name: 'Agent Admin', role: '智能体管理中心', desc: '统一管理智能体、组织权限、发布与运行审计，让业务使用与企业治理保持一致。', features: ['智能体配置与发布', '组织与权限管理', '运行记录与审计'] },
-  { id: 'officeagent', name: 'OfficeAgent', role: '员工办公入口', desc: '员工从具体任务出发，调用企业授权的模型、技能与工具，完成日常办公与专业业务工作。', features: ['统一任务入口', '调用技能与工具', '结果交付与人工确认'] },
+  { id: 'tokenhub', name: 'TokenHub', role: '模型资源中枢', desc: '统一模型接入、额度分配、用量统计与成本管理，在私有化环境中明确模型服务与调用边界，让资源使用有据。', features: ['模型统一接入', '部门与项目配额', '用量与成本管理'] },
+  { id: 'skillhub', name: 'SkillHub', role: '企业技能中心', desc: '将办公流程、专业规则与业务经验沉淀为可复用的技能，明确技能来源与版本，支撑可信共享和持续完善。', features: ['办公技能沉淀', '技能版本管理', '组织内共享复用'] },
+  { id: 'agent-admin', name: 'Agent Admin', role: '智能体管理中心', desc: '统一管理智能体、组织权限、发布与运行审计，明确 Agent 身份与执行边界，让行为可控、过程可追溯。', features: ['智能体配置与发布', '组织与权限管理', '运行记录与审计'] },
+  { id: 'officeagent', name: 'OfficeAgent', role: '员工办公入口', desc: '员工从具体任务出发，调用企业授权的模型、技能与工具，基于可信数据完成办公任务，保留结果依据与人工复核环节。', features: ['统一任务入口', '调用技能与工具', '结果交付与人工确认'] },
 ];
 
 export const industrialScenarios = [

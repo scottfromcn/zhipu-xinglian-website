@@ -21,5 +21,5 @@ export function ActionLink({ to, children, secondary = false }: { to: string; ch
 }
 
 export function ContactCTA() {
-  return <section className="contact-cta"><div className="site-shell cta-inner"><div><p className="eyebrow">从一个具体场景开始</p><h2>找到适合您的 AI 落地路径</h2><p>围绕工业场景或国企办公需求，明确产品组合、接入范围与验收目标。</p></div><ActionLink to="/support/sales">预约方案演示</ActionLink></div></section>;
+  return <section className="contact-cta"><div className="site-shell cta-inner"><div><p className="eyebrow">从一个具体场景开始</p><h2>找到适合您的 AI 落地路径</h2><p>围绕工业 SaaS、私有化一体机或 OfficeAI 私有化方案，明确数据、Agent 与环境的可信要求。</p></div><ActionLink to="/support/sales">预约方案演示</ActionLink></div></section>;
 }

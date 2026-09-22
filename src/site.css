@@ -205,3 +205,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .brief-result { border-top: 1px solid #dce3f0; padding-top: 22px; }
 .brief-result label { display: block; }
 .brief-result textarea { font-size: 13px; line-height: 1.8; }
+
+.trust-section { background: #f0f4fa; border-block: 1px solid #e2e9f3; }
+.trust-card > svg { color: #4766b2; margin-bottom: 23px; }
+.trust-card .trust-summary { color: #344e7d; font-weight: 650; margin-bottom: 12px; }
+.trust-card .trust-details { border-top: 1px solid #e4eaf3; padding-top: 18px; margin-top: 23px; font-size: 12px; color: #53698c; }
+.sales-form .deployment-notice { margin: -6px 0 23px; padding: 14px; background: #eaf0fb; color: #354f7f; border-radius: 7px; }
+@media (max-width: 600px) {
+  .home-hero h1 { font-size: clamp(25px, 7vw, 38px); }
+}
