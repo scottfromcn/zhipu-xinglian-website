@@ -147,3 +147,4 @@
 - 替换两处占位字母 Z，图像保持正方形比例，桌面 36px、手机 34px；首页链接已有可访问名称，装饰图像使用空 alt 避免重复播报。
 - 验收：生产构建、两修改组件 ESLint 和 Git diff 检查通过；浏览器 1440px/390px 验证两处 Logo 均成功加载、无横向溢出，favicon 引用正确；目视检查桌面/手机页头与桌面页脚，无变形或遮挡，无浏览器 error。
 - 按既有流程推送 GitHub 并更新原 Pages 生产站点；部署结果补记如下。
+- 发布完成：应用提交 `26114abb6e719f24b326e4402e1109b3690c7a5b`；Cloudflare 生产部署 `c1f6171b-39d4-45cd-bf4f-91ad5a98218b`，API 确认 production/success。正式域名首页、SVG Logo、JS/CSS 均返回 200，资源与本地构建一致；favicon 已包含在正式 HTML 中。
