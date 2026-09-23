@@ -130,3 +130,12 @@
 - 键盘 Tab 可聚焦“跳至正文”，焦点为 3px 实线；核心正文/强调文字与三种常用浅色背景对比度均超过 4.5:1（最低 4.82:1）。
 - OfficeAI 与工业两种需求清单实际生成通过，交付形式及可信要求正确；OfficeAI 下载链接解码内容与预览完全一致。未新增在线预约发送功能。
 - 本次验收通过后发布；生产部署 ID 与线上结果在下方补记。
+
+### 发布与线上复验
+
+- 应用代码提交 `c0560d84725701a0d84f6ce235c910ca53829e6a` 已推送 GitHub `main`。
+- 原 Pages 项目 `zhipu-xinglian` 生产部署成功：`762c4d3e-1c0c-4f8e-bb42-7d15ef02ad79`，地址 `https://762c4d3e.zhipu-xinglian.pages.dev`。
+- Cloudflare API 确认该版本为 canonical production deployment，状态 success，代码提交对应 `c0560d8`，dirty=false。
+- 正式域名首页、工业平台、工业方案、OfficeAI 直达页，以及 www 与 Pages 默认域名首页均返回 200；剔除 Cloudflare 统计注入脚本后 HTML 与本地构建一致，正式域名 JS/CSS 与构建文件逐字节一致。
+- Chrome 原生浏览器打开 `https://suzhouzp.top/`，已目视确认新版系统字体、轻字重标题、浅灰背景、黑色按钮及首页内容生效。内置浏览器仅线上访问超时，本地生产构建验收完整通过；本次已用 Chrome 补齐正式首页的视觉复验。
+- 本地生产预览保持在 `http://127.0.0.1:3000/`；线上官网 `https://suzhouzp.top/` 已更新。此发布记录为后续文档提交，不改变已发布应用代码。
