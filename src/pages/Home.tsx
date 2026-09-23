@@ -8,7 +8,6 @@ import { platformCapabilities } from '@/data/business';
 export default function Home() {
   return <SiteLayout>
     <section className="home-hero">
-      <img className="hero-background" src="/images/hero-bg.jpg" alt="" />
       <div className="site-shell hero-content"><p className="eyebrow hero-kicker">智谱星连 · 可信 AI 产品与解决方案</p>
         <h1>让可信 AI 深入<span>工业现场</span><br />走进<span>国企办公</span></h1>
         <p className="hero-description">工业智能体平台提供 SaaS 与私有化一体机，<br className="desktop-break" />OfficeAI 全部私有化部署，让数据、Agent 与整套环境可信。</p>
