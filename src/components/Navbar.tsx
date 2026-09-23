@@ -9,7 +9,7 @@ export default function Navbar() {
     <header className="site-header" onKeyDown={(event) => { if (event.key === 'Escape') setOpen(false); }}>
       <div className="site-shell header-inner">
         <Link to="/" className="brand" aria-label="智谱星连首页" onClick={() => setOpen(false)}>
-          <span className="brand-mark">Z</span><span>智谱星连<small>工业智能 · 国企办公</small></span>
+          <img className="brand-mark" src="/brand/zhipu-symbol.svg" width="36" height="36" alt="" /><span>智谱星连<small>工业智能 · 国企办公</small></span>
         </Link>
         <nav className="desktop-nav" aria-label="主导航">
           {navigation.map((item) => <NavLink key={item.href} to={item.href} className={({ isActive }) => isActive ? 'active' : ''}>{item.label}</NavLink>)}
