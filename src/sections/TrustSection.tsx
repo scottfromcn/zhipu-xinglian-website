@@ -1,3 +1,5 @@
+import { useLocation } from 'react-router-dom';
+import { businessDirection } from '@/data/business';
 import { ClipboardCheck, ShieldCheck } from 'lucide-react';
 import { SectionHeading } from '@/components/SiteLayout';
 
@@ -11,12 +13,19 @@ const trustLayers = [
 ];
 
 export default function TrustSection() {
+  const { pathname } = useLocation();
+  const direction = businessDirection(pathname);
+  const note = direction === 'industrial'
+    ? '工业 SaaS 明确云端数据范围与租户边界；私有化一体机明确企业侧部署边界。安全控制与验收项结合实际环境逐项确认。'
+    : direction === 'office'
+      ? 'OfficeAI 全部私有化交付，明确客户侧的数据、系统连接、模型调用与运维边界，逐项确认安全控制和验收证据。'
+      : '工业智能与办公智能分别建设产品与解决方案，共同以业务效果和数据安全作为交付要求。';
   return <section className="section-pad trust-section" id="trust"><div className="site-shell">
-    <SectionHeading eyebrow="共同的产品基石 / 双层可信" title="业务可信，数据安全可信" description="既关注 AI 能否把任务做好，也关注数据是否始终处于受控边界。两层可信贯穿评测、接入、部署和持续运行。" />
+    <SectionHeading eyebrow="双层可信 / 共同的交付原则" title="业务可信，数据安全可信" description="既关注 AI 能否把任务做好，也关注数据是否始终处于受控边界。两层可信贯穿评测、接入、部署和持续运行。" />
     <div className="two-grid">{trustLayers.map(({ title, summary, icon: Icon, description, details, evidence }, index) => <article className="content-card trust-card" key={title}>
       <div className="module-top"><Icon size={26} aria-hidden="true" /><span>TRUST / 0{index + 1}</span></div><h3>{title}</h3><p className="trust-summary">{summary}</p><p>{description}</p>
       <ul className="feature-list">{details.map(detail => <li key={detail}>{detail}</li>)}</ul><p className="trust-details">{evidence}</p>
     </article>)}</div>
-    <p className="section-note">工业 SaaS 明确云端数据范围与租户边界；工业私有化一体机与 OfficeAI 明确客户侧部署边界。安全控制与验收项结合实际环境逐项确认。</p>
+    <p className="section-note">{note}</p>
   </div></section>;
 }

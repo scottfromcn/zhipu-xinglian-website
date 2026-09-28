@@ -221,3 +221,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .card-footnote { border-top: 1px solid var(--site-border); padding-top: 18px; margin-top: 24px; font-size: 12px !important; }
 .trust-card .module-top { margin-bottom: 24px; }
+
+/* Each business has its own navigation and customer journey. */
+.business-nav { padding-top: 80px; border-bottom: 1px solid var(--site-border); background: #fff; }
+.business-nav-inner { display: flex; align-items: center; gap: 36px; padding-block: 18px; }
+.business-nav-title { font-size: 16px; font-weight: 500; white-space: nowrap; }
+.business-nav nav { display: flex; flex-wrap: wrap; gap: 12px 25px; }
+.business-nav a { font-size: 13px; color: var(--site-muted); padding-block: 5px; }
+.business-nav a[aria-current], .business-nav a:hover { color: var(--site-accent); }
+.business-nav + .page-hero { padding-top: 64px; }
+.business-card > .action-link { align-self: flex-start; margin-top: auto; }
+.business-card .business-delivery { font-size: 13px; padding-top: 18px; border-top: 1px solid var(--site-border); }
+@media (max-width: 900px) {
+  .business-nav { padding-top: 72px; }
+  .business-nav-inner { align-items: flex-start; gap: 14px; flex-direction: column; }
+  .business-nav nav { gap: 12px 20px; }
+  .business-nav + .page-hero { padding-top: 42px; }
+}

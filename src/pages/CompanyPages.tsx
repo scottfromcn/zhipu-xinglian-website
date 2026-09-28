@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import SiteLayout, { PageHero, SectionHeading, ActionLink, ContactCTA } from '@/components/SiteLayout';
 
 export function CasesPage() {
-  return <SiteLayout><PageHero eyebrow="OfficeAI / 客户实践" title="让已有信息化投入，持续产生价值" description="从苏州地铁、苏州交通到苏州发改委及政府侧，OfficeAI 已积累三个客户项目的实践经验。围绕各自业务，连接系统、组织知识，推进私有化智能办公。" />
+  return <SiteLayout><PageHero eyebrow="办公智能 / OfficeAI 客户实践" title="让已有信息化投入，持续产生价值" description="从苏州地铁、苏州交通到苏州发改委及政府侧，OfficeAI 已积累三个客户项目的实践经验。围绕各自业务，连接系统、组织知识，推进私有化智能办公。" />
     <section className="section-pad"><div className="site-shell"><SectionHeading eyebrow="三个项目 / 共同的落地课题" title="已有系统如何被 AI 用起来" description="客户拥有不同的系统与资料，项目都需要围绕模型能力、系统连接和知识沉淀展开，结合实际环境确定实施范围。" /><CustomerPractices /></div></section>
     <section className="section-pad section-tint"><div className="site-shell"><SectionHeading eyebrow="苏州地铁 / 既有办公应用" title="从具体任务，积累组织能力" description="既有办公实践涵盖制度查询、人事服务、评标辅助与合同审查，关键结论由业务人员复核。" /><div className="four-grid">{[['制度专员', '辅助查询企业制度与业务规则。'], ['人事专员', '辅助人事业务咨询与资料处理。'], ['评标专员', '围绕评标资料开展辅助处理。'], ['合同审查专员', '辅助分析合同条款，供专业人员复核。']].map(([title, desc]) => <article className="content-card" key={title}><h3>{title}</h3><p>{desc}</p></article>)}</div></div></section>
     <section className="section-pad"><div className="site-shell"><SectionHeading eyebrow="项目方法" title="从已有资产，到可验证的任务成果" description="以同一条实施路径梳理不同项目，按客户实际范围确认连接、知识与交付内容。" /><div className="four-grid">{[
@@ -17,7 +17,7 @@ export function CasesPage() {
 
 export function AboutPage() {
   return <SiteLayout><PageHero eyebrow="关于智谱星连" title="连接 AI 能力与企业实际业务" description="江苏智谱星连以业务可信与数据安全可信为共同基础，提供评测先行的工业智能平台与解决方案，以及连接已有系统、沉淀组织知识的 OfficeAI 私有化办公方案。" />
-    <section className="section-pad"><div className="site-shell"><SectionHeading title="两条业务主线，面向明确需求" /><div className="two-grid"><article className="content-card"><p className="eyebrow">工业智能</p><h3>平台与场景协同</h3><p>以场景评测、企业连接器、智能体运行时和模型服务支撑工业 AI 落地，提供 SaaS 与私有化一体机两种形式。</p><ActionLink to="/industrial-platform" secondary>了解工业平台</ActionLink></article><article className="content-card"><p className="eyebrow">国企办公</p><h3>OfficeAI 产品组合</h3><p>以优质模型、系统连接和知识沉淀支撑国企与政务办公。标准产品结合连接器建设、知识治理与场景实施，全部私有化交付。</p><ActionLink to="/office-ai" secondary>了解 OfficeAI</ActionLink></article></div></div></section>
+    <section className="section-pad"><div className="site-shell"><SectionHeading title="两条业务主线，面向明确需求" /><div className="two-grid"><article className="content-card"><p className="eyebrow">工业智能</p><h3>平台与场景协同</h3><p>以场景评测、企业连接器、智能体运行时和模型服务支撑工业 AI 落地，提供 SaaS 与私有化一体机两种形式。</p><ActionLink to="/industrial-ai" secondary>了解工业智能</ActionLink></article><article className="content-card"><p className="eyebrow">国企办公</p><h3>办公智能 · OfficeAI</h3><p>以优质模型、系统连接和知识沉淀支撑国企与政务办公。标准产品结合连接器建设、知识治理与场景实施，全部私有化交付。</p><ActionLink to="/office-ai" secondary>了解 OfficeAI</ActionLink></article></div></div></section>
     <section className="section-pad section-tint" id="tac"><div className="site-shell"><SectionHeading eyebrow="支撑理念 / TAC" title="让 AI 投入转化为业务价值" description="从资源使用、能力质量与业务效果三个方面评估 AI 应用，让产品建设始终围绕实际任务与可验证成果展开。" /><div className="three-grid">{[['资源使用', '关注模型调用、资源配额与使用成本。'], ['能力质量', '关注任务完成质量、知识适配与工具协作。'], ['业务价值', '关注员工采用、流程效率与可复用成果。']].map(([title, desc]) => <article className="content-card" key={title}><h3>{title}</h3><p>{desc}</p></article>)}</div></div></section><ContactCTA /></SiteLayout>;
 }
 

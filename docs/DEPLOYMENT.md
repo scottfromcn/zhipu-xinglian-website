@@ -27,6 +27,7 @@ Wrangler 使用本机已有登录授权，不将凭据写入仓库。若网络�
 - `dist/index.html` 中 JS/CSS 使用 `/assets/` 根路径。
 - `dist/_redirects` 保留 `/* /index.html 200`，支持 React Router 二级路由。
 - 部署成功后检查 Cloudflare 生产部署状态、正式域名首页和以下直达页面：
+  - `/industrial-ai`
   - `/industrial-platform`
   - `/industrial-evaluation`
   - `/solutions/industrial`

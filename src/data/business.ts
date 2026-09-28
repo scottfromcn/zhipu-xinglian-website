@@ -1,10 +1,14 @@
 export const navigation = [
-  { label: '工业智能体平台', href: '/industrial-platform' },
-  { label: '工业 AI 解决方案', href: '/solutions/industrial' },
-  { label: 'OfficeAI', href: '/office-ai' },
-  { label: '客户案例', href: '/cases' },
+  { label: '工业智能', href: '/industrial-ai' },
+  { label: '办公智能', href: '/office-ai' },
   { label: '关于我们', href: '/about' },
 ];
+
+export function businessDirection(pathname: string): 'industrial' | 'office' | undefined {
+  if (['/industrial-ai', '/industrial-platform', '/industrial-evaluation', '/solutions/industrial'].includes(pathname)) return 'industrial';
+  if (['/office-ai', '/cases'].includes(pathname)) return 'office';
+  return undefined;
+}
 
 export const officeModules = [
   { id: 'tokenhub', name: 'TokenHub', role: '模型能力与资源中枢', desc: '围绕任务质量、稳定性与成本选择模型，统一接入、授权、额度和用量管理，在私有化环境中明确模型服务与调用边界。', features: ['模型统一接入', '部门与项目配额', '用量与成本管理'] },

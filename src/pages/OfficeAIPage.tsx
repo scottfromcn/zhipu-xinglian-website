@@ -6,13 +6,13 @@ import TrustSection from '@/sections/TrustSection';
 
 export default function OfficeAIPage() {
   return <SiteLayout>
-    <PageHero eyebrow="OfficeAI / 国企与政务办公 · 全部私有化" title="让已有系统与知识，成为 AI 办公能力" description="在客户私有化可信环境中，提供优质模型服务，连接现有业务系统，沉淀组织知识与技能，让 Agent 基于真实业务信息完成任务，让信息化投入持续发挥价值。"><div className="hero-actions"><ActionLink to="/support/sales?business=office">沟通办公场景</ActionLink><ActionLink to="/cases" secondary>查看客户实践</ActionLink></div></PageHero>
+    <PageHero eyebrow="办公智能 / OfficeAI · 国企与政务办公" title="让已有系统与知识，成为 AI 办公能力" description="在客户私有化可信环境中，提供优质模型服务，连接现有业务系统，沉淀组织知识与技能，让 Agent 基于真实业务信息完成任务，让信息化投入持续发挥价值。"><div className="hero-actions"><ActionLink to="/support/sales?business=office">沟通办公场景</ActionLink><ActionLink to="/cases" secondary>查看客户实践</ActionLink></div></PageHero>
     <section className="section-pad"><div className="site-shell"><SectionHeading eyebrow="核心能力" title="模型质量、系统连接、知识沉淀" description="从任务出发选择和配置 Agent，持续建设支撑任务完成的模型、连接与知识能力。" /><OfficeValues detailed /></div></section>
     <section className="section-pad section-tint"><div className="site-shell"><SectionHeading eyebrow="产品 + 解决方案" title="共同的产品基础，贴合业务的实施服务" description="从软件部署到业务可用，需要把客户已有的系统、资料和工作方式连接起来。" /><div className="two-grid">
       <article className="content-card"><p className="eyebrow">标准产品</p><h3>四模块协同，承接使用与管理</h3><p>TokenHub 管理模型服务，SkillHub 复用企业技能，Agent Admin 管理权限与运行，OfficeAgent 提供员工入口。</p><ul className="feature-list"><li>提供模型、技能、Agent 的共同管理基础</li><li>围绕客户可信环境整体私有化部署</li><li>按任务配置能力与使用入口</li></ul></article>
       <article className="content-card"><p className="eyebrow">实施服务</p><h3>把已有资产接入实际办公任务</h3><p>梳理系统接口与权限，建设连接器；整理知识来源、版本和更新机制；结合业务规则配置技能与复核流程。</p><ul className="feature-list"><li>系统连接：接口适配、授权与调用验证</li><li>知识建设：资料整理、检索与引用验证</li><li>场景交付：任务配置、业务评测与验收</li></ul></article>
     </div></div></section>
-    <section className="section-pad"><div className="site-shell"><SectionHeading eyebrow="产品组成" title="从模型服务到员工入口" description="知识库提供事实与依据，SkillHub 沉淀做事方法；两者通过授权的连接与调用共同服务办公任务。" /><OfficeModules detailed /></div></section>
+    <section className="section-pad" id="products"><div className="site-shell"><SectionHeading eyebrow="产品组成" title="从模型服务到员工入口" description="知识库提供事实与依据，SkillHub 沉淀做事方法；两者通过授权的连接与调用共同服务办公任务。" /><OfficeModules detailed /></div></section>
     <section className="section-pad section-tint"><div className="site-shell"><SectionHeading eyebrow="一次任务如何完成" title="从员工需求，到有依据的业务成果" description="以办公材料准备为例，模型、系统与知识在同一个授权任务中协同。" /><div className="office-workflow"><div className="governance-bar"><strong>Agent Admin · 全程管理</strong><span>身份权限 · 数据边界 · 调用审计</span></div><div className="four-grid">{[
       ['OfficeAgent', '提出任务', '员工说明目标，确认可使用的资料和操作范围。'],
       ['Connector + 知识库', '获取业务依据', '在授权范围内查询现有系统，检索制度与文档，保留来源。'],

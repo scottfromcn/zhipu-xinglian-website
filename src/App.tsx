@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import PlaceholderPage from './pages/PlaceholderPage';
+import IndustrialAIPage from './pages/IndustrialAIPage';
 import IndustrialEvaluationPage from './pages/IndustrialEvaluationPage';
 import IndustrialPlatformPage from './pages/IndustrialPlatformPage';
 import IndustrialSolutionsPage from './pages/IndustrialSolutionsPage';
@@ -10,8 +11,8 @@ import { AboutPage, CasesPage, SalesPage } from './pages/CompanyPages';
 import './site.css';
 
 const titles: Record<string, string> = {
-  '/': '工业智能与 OfficeAI 国企与政务办公', '/industrial-platform': '工业智能体平台',
-  '/solutions/industrial': '工业 AI 解决方案', '/office-ai': 'OfficeAI 国企与政务办公',
+  '/': '工业智能与办公智能', '/industrial-ai': '工业智能', '/industrial-platform': '工业智能体平台',
+  '/solutions/industrial': '工业 AI 解决方案', '/office-ai': '办公智能 · OfficeAI',
   '/industrial-evaluation': '工业 AI 场景评测', '/cases': '客户案例', '/about': '关于我们', '/support/sales': '预约方案演示',
 };
 const redirects: Record<string, string> = {
@@ -35,6 +36,7 @@ export default function App() {
   }, [pathname, hash]);
   return <Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/industrial-ai" element={<IndustrialAIPage />} />
     <Route path="/industrial-evaluation" element={<IndustrialEvaluationPage />} />
     <Route path="/industrial-platform" element={<IndustrialPlatformPage />} />
     <Route path="/solutions/industrial" element={<IndustrialSolutionsPage />} />
