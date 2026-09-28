@@ -28,7 +28,8 @@ Wrangler 使用本机已有登录授权，不将凭据写入仓库。若网络�
 - `dist/_redirects` 保留 `/* /index.html 200`，支持 React Router 二级路由。
 - 部署成功后检查 Cloudflare 生产部署状态、正式域名首页和以下直达页面：
   - `/industrial-platform`
+  - `/industrial-evaluation`
   - `/solutions/industrial`
   - `/office-ai`
-- 检查页面上的工业 SaaS / 私有化一体机、OfficeAI 全部私有化及三层可信表达。
+- 检查页面上的工业 SaaS / 私有化一体机、OfficeAI 全部私有化及业务可信、数据安全可信的双层可信表达。
 - 更新 `WORKLOG.md`，记录部署 ID、应用代码提交和线上验收结果。

@@ -7,7 +7,7 @@ export const navigation = [
 ];
 
 export const officeModules = [
-  { id: 'tokenhub', name: 'TokenHub', role: '模型资源中枢', desc: '统一模型接入、额度分配、用量统计与成本管理，在私有化环境中明确模型服务与调用边界，让资源使用有据。', features: ['模型统一接入', '部门与项目配额', '用量与成本管理'] },
+  { id: 'tokenhub', name: 'TokenHub', role: '模型能力与资源中枢', desc: '围绕任务质量、稳定性与成本选择模型，统一接入、授权、额度和用量管理，在私有化环境中明确模型服务与调用边界。', features: ['模型统一接入', '部门与项目配额', '用量与成本管理'] },
   { id: 'skillhub', name: 'SkillHub', role: '企业技能中心', desc: '将办公流程、专业规则与业务经验沉淀为可复用的技能，明确技能来源与版本，支撑可信共享和持续完善。', features: ['办公技能沉淀', '技能版本管理', '组织内共享复用'] },
   { id: 'agent-admin', name: 'Agent Admin', role: '智能体管理中心', desc: '统一管理智能体、组织权限、发布与运行审计，明确 Agent 身份与执行边界，让行为可控、过程可追溯。', features: ['智能体配置与发布', '组织与权限管理', '运行记录与审计'] },
   { id: 'officeagent', name: 'OfficeAgent', role: '员工办公入口', desc: '员工从具体任务出发，调用企业授权的模型、技能与工具，基于可信数据完成办公任务，保留结果依据与人工复核环节。', features: ['统一任务入口', '调用技能与工具', '结果交付与人工确认'] },
@@ -20,8 +20,20 @@ export const industrialScenarios = [
 ];
 
 export const platformCapabilities = [
-  { title: '供给目录与发布', desc: '汇集完整智能体应用、托管智能体与可复用组件，通过审核与版本管理组织供给。' },
-  { title: '企业授权与安装', desc: '企业管理员选择已发布供给，在租户边界内完成安装、启用与停用。' },
-  { title: '托管运行与使用', desc: '为企业安装项建立独立运行实例，员工从授权工作空间进入智能体。' },
-  { title: '用量计量与审计', desc: '记录模型使用量与关键操作，支持配额管理和可追踪的运行记录。' },
+  { title: '场景评测', desc: '用真实业务样本与统一标准比较候选方案，明确适配条件、质量差距与使用成本。' },
+  { title: '企业连接器', desc: '将现有系统、数据和工具的授权能力开放给 Agent，保留既有系统与业务规则。' },
+  { title: '智能体运行时', desc: '按任务与企业环境适配运行时，承接部署、任务执行、运行监控与持续维护。' },
+  { title: 'Token 与模型服务', desc: '围绕任务选择合适的模型能力，统筹质量、稳定性、调用配额与成本。' },
+];
+
+export const officeValues = [
+  { id: 'models', tag: 'MODEL / 模型能力', title: '好模型，支撑好结果', desc: '围绕具体办公任务选择模型，关注结果质量、稳定性和成本。TokenHub 统一管理模型接入、授权、额度与用量。', detail: '让每类任务用上合适的模型能力' },
+  { id: 'connectors', tag: 'CONNECTOR / 系统连接', title: '让已有系统用得起来', desc: '通过连接器开放既有系统的查询、数据与业务操作，在原有权限和规则下供 Agent 调用，让信息化投入持续发挥价值。', detail: '按系统梳理接口、权限与业务流程' },
+  { id: 'knowledge', tag: 'KNOWLEDGE / 知识沉淀', title: '让组织经验积累下来', desc: '将制度、文档与业务经验整理为有来源、可更新的知识；将成熟做法沉淀为 SkillHub 中可复用的技能。', detail: '知识提供依据，技能组织做事方法' },
+];
+
+export const officePractices = [
+  { name: '苏州地铁', sector: '轨道交通', desc: '围绕企业办公任务，积累智能体应用与组织能力建设经验。' },
+  { name: '苏州交通', sector: '交通领域', desc: '在交通领域开展 OfficeAI 项目实践，推动 AI 与既有信息化体系衔接。' },
+  { name: '苏州发改委', sector: '政务办公', desc: '在政务办公领域开展 OfficeAI 项目实践，探索组织知识与办公任务协同。' },
 ];

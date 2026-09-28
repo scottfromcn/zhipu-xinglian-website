@@ -218,3 +218,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .trust-card .trust-summary { color: var(--site-text); font-weight: 500; margin-bottom: 12px; }
 .trust-card .trust-details { border-top: 1px solid var(--site-border); padding-top: 18px; margin-top: 23px; font-size: 12px; color: var(--site-muted); }
 .sales-form .deployment-notice { margin: -6px 0 23px; padding: 14px; background: var(--site-bg); color: var(--site-muted); border-radius: 7px; }
+
+.card-footnote { border-top: 1px solid var(--site-border); padding-top: 18px; margin-top: 24px; font-size: 12px !important; }
+.trust-card .module-top { margin-bottom: 24px; }

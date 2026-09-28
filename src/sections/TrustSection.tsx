@@ -1,52 +1,22 @@
-import { Database, Bot, ShieldCheck } from 'lucide-react';
+import { ClipboardCheck, ShieldCheck } from 'lucide-react';
 import { SectionHeading } from '@/components/SiteLayout';
 
 const trustLayers = [
-  {
-    title: '数据可信',
-    summary: '来源有据，使用有界',
-    description: '以经过确认的企业数据与知识为依据，明确来源、版本与访问权限，让 Agent 使用的信息可核验、引用可追溯。',
-    details: '数据来源与版本 · 授权访问 · 引用溯源',
-    icon: Database,
-  },
-  {
-    title: 'Agent 可信',
-    summary: '身份明确，行为可控',
-    description: '明确 Agent 的身份、技能来源与执行权限，记录任务过程和工具调用；输出有依据、结果可复核，关键操作由授权人员确认。',
-    details: '身份与技能管理 · 权限约束 · 执行留痕',
-    icon: Bot,
-  },
-  {
-    title: '环境可信',
-    summary: '整套部署，统一治理',
-    description: '将模型服务、数据与知识服务、Agent 运行和管理组件纳入整套可信环境，明确网络、访问与运维边界，贯穿部署和持续运行。',
-    details: '运行环境隔离 · 访问控制 · 运维审计',
-    icon: ShieldCheck,
-  },
+  { title: '业务可信', summary: '有依据，能验证，可复核', icon: ClipboardCheck,
+    description: '数据与知识有来源，模型与 Agent 围绕真实任务评测。保留引用依据、执行过程和工具调用记录，让结果可核验，关键结论与操作由授权人员复核。',
+    details: ['数据来源与知识版本可追溯', '任务质量与业务规则可评测', 'Agent 执行留痕，关键操作可复核'], evidence: '验收依据：场景样本、评测报告、引用与执行记录。' },
+  { title: '数据安全可信', summary: '权限可控，边界清晰，全程可审计', icon: ShieldCheck,
+    description: '将数据、知识、模型服务、连接器与 Agent 运行纳入整套可信环境。按身份和最小权限开放访问，明确数据存储、传输、模型调用与运维边界。',
+    details: ['按组织与角色控制数据、知识和工具访问', '明确环境隔离、数据保护与模型调用范围', '系统连接与运维操作授权，安全审计留痕'], evidence: '验收依据：数据流向、权限配置、隔离与访问验证、审计记录。' },
 ];
 
 export default function TrustSection() {
-  return (
-    <section className="section-pad trust-section" id="trust">
-      <div className="site-shell">
-        <SectionHeading
-          eyebrow="共同的产品基石 / 可信 AI"
-          title="数据可信，Agent 可信，环境可信"
-          description="从数据依据到任务执行，再到整套环境部署，以可核验、可控制、可追溯作为工业智能与国企办公共同的交付要求。"
-        />
-        <div className="three-grid">
-          {trustLayers.map(({ title, summary, description, details, icon: Icon }) => (
-            <article className="content-card trust-card" key={title}>
-              <Icon size={24} aria-hidden="true" />
-              <h3>{title}</h3>
-              <p className="trust-summary">{summary}</p>
-              <p>{description}</p>
-              <p className="trust-details">{details}</p>
-            </article>
-          ))}
-        </div>
-        <p className="section-note">围绕数据、Agent 与环境逐项确认配置和验收证据，让“可信”落实到可检查的交付内容。</p>
-      </div>
-    </section>
-  );
+  return <section className="section-pad trust-section" id="trust"><div className="site-shell">
+    <SectionHeading eyebrow="共同的产品基石 / 双层可信" title="业务可信，数据安全可信" description="既关注 AI 能否把任务做好，也关注数据是否始终处于受控边界。两层可信贯穿评测、接入、部署和持续运行。" />
+    <div className="two-grid">{trustLayers.map(({ title, summary, icon: Icon, description, details, evidence }, index) => <article className="content-card trust-card" key={title}>
+      <div className="module-top"><Icon size={26} aria-hidden="true" /><span>TRUST / 0{index + 1}</span></div><h3>{title}</h3><p className="trust-summary">{summary}</p><p>{description}</p>
+      <ul className="feature-list">{details.map(detail => <li key={detail}>{detail}</li>)}</ul><p className="trust-details">{evidence}</p>
+    </article>)}</div>
+    <p className="section-note">工业 SaaS 明确云端数据范围与租户边界；工业私有化一体机与 OfficeAI 明确客户侧部署边界。安全控制与验收项结合实际环境逐项确认。</p>
+  </div></section>;
 }

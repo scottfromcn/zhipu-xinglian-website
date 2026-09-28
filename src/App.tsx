@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import PlaceholderPage from './pages/PlaceholderPage';
+import IndustrialEvaluationPage from './pages/IndustrialEvaluationPage';
 import IndustrialPlatformPage from './pages/IndustrialPlatformPage';
 import IndustrialSolutionsPage from './pages/IndustrialSolutionsPage';
 import OfficeAIPage from './pages/OfficeAIPage';
@@ -9,15 +10,15 @@ import { AboutPage, CasesPage, SalesPage } from './pages/CompanyPages';
 import './site.css';
 
 const titles: Record<string, string> = {
-  '/': '工业智能与 OfficeAI 国企办公', '/industrial-platform': '工业智能体平台',
-  '/solutions/industrial': '工业 AI 解决方案', '/office-ai': 'OfficeAI 国企办公',
-  '/cases': '客户案例', '/about': '关于我们', '/support/sales': '预约方案演示',
+  '/': '工业智能与 OfficeAI 国企与政务办公', '/industrial-platform': '工业智能体平台',
+  '/solutions/industrial': '工业 AI 解决方案', '/office-ai': 'OfficeAI 国企与政务办公',
+  '/industrial-evaluation': '工业 AI 场景评测', '/cases': '客户案例', '/about': '关于我们', '/support/sales': '预约方案演示',
 };
 const redirects: Record<string, string> = {
   '/solutions/tokenhub': '/office-ai#tokenhub', '/solutions/manufacturing': '/solutions/industrial#procurement',
   '/solutions/transit': '/solutions/industrial#operations', '/solutions/government': '/office-ai',
   '/capabilities/models': '/industrial-platform', '/capabilities/agent': '/industrial-platform',
-  '/capabilities/tokenhub': '/office-ai#tokenhub', '/capabilities/knowledge': '/office-ai#skillhub',
+  '/capabilities/tokenhub': '/office-ai#tokenhub', '/capabilities/knowledge': '/office-ai#knowledge',
   '/pricing/tokenhub': '/office-ai#tokenhub', '/pricing/employees': '/office-ai',
 };
 
@@ -34,6 +35,7 @@ export default function App() {
   }, [pathname, hash]);
   return <Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/industrial-evaluation" element={<IndustrialEvaluationPage />} />
     <Route path="/industrial-platform" element={<IndustrialPlatformPage />} />
     <Route path="/solutions/industrial" element={<IndustrialSolutionsPage />} />
     <Route path="/office-ai" element={<OfficeAIPage />} />
