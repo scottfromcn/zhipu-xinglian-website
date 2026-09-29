@@ -258,3 +258,4 @@
 - 交付 `public/architecture/officeai.svg`（9,157 bytes）、`public/architecture/industrial-agent.svg`（10,746 bytes）及两页可编辑 `public/downloads/officeai-industrial-architecture-2026-09-29-v2.pptx`。
 - 验收：构建、变更 TSX lint 与 diff 检查通过；SVG 有真实文本及 6 / 9 条定向路径，无 image 元素；浏览器测量所有文字均未超出预留宽度。逐图目视检查及 400% 放大检查通过，PPT 导出后重新导入渲染复核。
 - 浏览器验收两页各在 1440px、390px 下无横向溢出或页面错误，大图打开、SVG 下载和新版 PPT 下载均成功。沿用现有 GitHub / Cloudflare 发布流程，结果在下方补记。
+- 已发布：代码提交 `8c3b705` 推送 GitHub；Cloudflare 部署 `https://aa5440ad.zhipu-xinglian.pages.dev`。正式域名两页、两张 SVG、新 PPT 及三个旧资源重定向共 8 项验证通过，响应内容与当前构建一致。
