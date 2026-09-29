@@ -201,3 +201,11 @@
 - 目视检查首页、手机工业概览与办公客户页；实测手机导航切换工业业务后收起，办公产品锚点定位约 104px，咨询清单正确选中 OfficeAI。沿用现有部署流程同步线上。
 - 发布完成：应用提交 `e135afa` 已推送 GitHub；Cloudflare Pages 部署成功，地址 `https://333812da.zhipu-xinglian.pages.dev`。正式域名首页、工业业务概览、办公智能和案例直达页均成功返回并引用新构建，JS/CSS 与本地生产构建逐字节一致。
 - 本地生产预览继续运行于 3000 端口，浏览器已恢复正常视口并保留新版首页。
+
+## 2026-09-29：OfficeAI 组件与 Token 供给架构图
+
+- 用户提供 metroAI / tokenHub 示意图，要求基于办公智能生成类似图，说明组件及内外部 Token 依赖。
+- 使用 imagegen 生成图稿，明确 OfficeAgent、SkillHub、Agent Admin、TokenHub、Connectors 和知识库的职责，以及私有化环境与可选外部模型 API 边界。
+- 内部模型依赖客户内部算力与额度核算；外部 API 依赖授权、数据外发策略、供应商服务和额度。所有模型调用经 TokenHub；外部通道可关闭。区分 Token 用量与 API Key 凭据。
+- 已目视核验组件、连线、中文文字、双层可信与部署边界。图稿作为建议架构交付，本轮未修改官网内容或部署。
+- 交付：`docs/diagrams/officeai-components-token-2026-09-29.png`；同名 Markdown 保存组件说明、依赖解释、验收记录与最终生成提示词。
