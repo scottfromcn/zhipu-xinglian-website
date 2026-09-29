@@ -240,3 +240,11 @@
 - 模型供给独立成区；底部 SaaS 与私有化一体机分别展示环境边界和组件。明确 SaaS 不等于外部模型 API、私有化可以仅内部运行或按策略调用外部模型，具体方案部署支持以适配结果为准。
 - 按已确认方案目视自验：三类入口、六条评测接入虚线、三条调用实线、中文和厂商名称、内外部依赖、两种部署框及双层可信均通过。
 - 交付 `docs/diagrams/industrial-agent-components-token-2026-09-29-v2.png`，同名 Markdown 包含说明、验收结果和最终提示词。仅图稿更新，未修改官网代码或部署。
+
+## 2026-09-29：架构图转为 PPT 并嵌入官网
+
+- 按用户要求先制作 OfficeAI、工业智能体平台两页 PPT，再嵌入对应网页。采用 Presentations 技能及内置 Artifact Tool；文字、组件框、连接线为原生可编辑对象，保持已确认内容与智谱 UI 配色，使用 4:3 架构图画布。
+- PPT 文件：`public/downloads/officeai-industrial-architecture-2026-09-29.pptx`；生成源代码：`scripts/build-architecture-deck.mjs`。结构/字体/几何检查通过，导出后重新导入渲染并逐页目视检查；OfficeAI 有 44 个文字片段、6 条连接线，工业平台有 45 个文字片段、9 条连接线，均为原生对象。修正初次导出 API 箭头端点差异，最终方向与确认图一致。
+- 新增共用 ArchitectureDiagram 组件；OfficeAI、工业平台页各嵌入确认图稿的 WebP 版本，新增查看大图、下载两页 PPT、文字说明和业务导航锚点。移动端保留完整图示预览，并以正文说明关键关系。
+- 生产构建、变更 TSX ESLint、git diff 检查通过。Playwright 实测两页在 1440px / 390px 下图片正常、无横向溢出、单一 h1、无页面错误；四次大图打开与 PPT 下载均成功，下载文件具有有效 ZIP/PPTX 文件头（26,618 bytes）。已目视检查网页桌面版及手机端完整架构区。
+- 本地生产预览重新启动于 `http://127.0.0.1:3000`。发布沿用现有 GitHub 与 Cloudflare Pages 项目，发布结果在下方补记。

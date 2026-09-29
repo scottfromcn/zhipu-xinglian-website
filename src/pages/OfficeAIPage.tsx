@@ -3,6 +3,7 @@ import OfficeModules from '@/sections/OfficeModules';
 import OfficeValues from '@/sections/OfficeValues';
 import CustomerPractices from '@/sections/CustomerPractices';
 import TrustSection from '@/sections/TrustSection';
+import ArchitectureDiagram from '@/sections/ArchitectureDiagram';
 
 export default function OfficeAIPage() {
   return <SiteLayout>
@@ -19,6 +20,7 @@ export default function OfficeAIPage() {
       ['TokenHub + SkillHub', '组织任务执行', '使用匹配任务的模型能力，按企业技能与业务规则完成处理。'],
       ['人工复核', '形成可用成果', '检查内容、引用与执行记录，关键结论或写入操作经授权确认。'],
     ].map(([label, title, desc], index) => <article key={label}><span className="step-number">0{index + 1}</span><p className="eyebrow">{label}</p><h3>{title}</h3><p>{desc}</p></article>)}</div></div></div></section>
+    <ArchitectureDiagram business="office" />
     <TrustSection />
     <section className="section-pad" id="deployment"><div className="site-shell"><SectionHeading eyebrow="部署方式 / 全部私有化" title="整套部署到客户可信环境" description="模型服务、连接器、知识服务、技能、Agent 运行与管理组件统一规划部署；逐项确认数据流向、访问权限、模型调用与运维责任。" /><div className="three-grid">{[
       ['部署边界', '围绕客户指定的计算、存储和网络环境部署，明确数据存储、传输与模型服务位置。'],

@@ -4,11 +4,11 @@ import { businessDirection } from '@/data/business';
 const links = {
   industrial: [
     ['业务概览', '/industrial-ai'], ['场景评测', '/industrial-evaluation'],
-    ['智能体平台', '/industrial-platform'], ['工业解决方案', '/solutions/industrial'],
+    ['智能体平台', '/industrial-platform'], ['平台架构', '/industrial-platform#architecture'], ['工业解决方案', '/solutions/industrial'],
   ],
   office: [
     ['OfficeAI 方案', '/office-ai'], ['核心能力', '/office-ai#models'],
-    ['产品组成', '/office-ai#products'], ['私有化交付', '/office-ai#deployment'], ['客户实践', '/cases'],
+    ['产品组成', '/office-ai#products'], ['方案架构', '/office-ai#architecture'], ['私有化交付', '/office-ai#deployment'], ['客户实践', '/cases'],
   ],
 };
 

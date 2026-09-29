@@ -1,6 +1,7 @@
 import SiteLayout, { PageHero, SectionHeading, ActionLink, ContactCTA } from '@/components/SiteLayout';
 import { platformCapabilities } from '@/data/business';
 import TrustSection from '@/sections/TrustSection';
+import ArchitectureDiagram from '@/sections/ArchitectureDiagram';
 
 export default function IndustrialPlatformPage() {
   return <SiteLayout>
@@ -16,6 +17,7 @@ export default function IndustrialPlatformPage() {
       ['智能体运行时', '适配任务，管理执行过程', '按方案所需的框架、工具和运行依赖适配运行时，规划任务执行、监控、异常处置与版本维护；具体适配范围结合企业环境验证。'],
       ['Token 与模型服务', '关注质量，也管理使用成本', '以任务效果选择模型，结合质量、稳定性、时延与成本确定服务配置，通过 TokenHub 统一管理调用授权、额度和用量。'],
     ].map(([tag, title, desc]) => <article className="content-card" key={tag}><p className="eyebrow">{tag}</p><h3>{title}</h3><p>{desc}</p></article>)}</div></div></section>
+    <ArchitectureDiagram business="industrial" />
     <TrustSection />
     <section className="section-pad" id="deployment"><div className="site-shell"><SectionHeading eyebrow="交付形式" title="SaaS 与私有化一体机，按企业需求选择" description="两种形式都以业务可信与数据安全可信为交付要求，分别明确部署位置、数据范围与运营分工。" /><div className="two-grid">
       <article className="content-card"><p className="eyebrow">SaaS</p><h3>可信云环境中的平台服务</h3><p>在企业授权空间内使用平台，结合场景需要选择评测、系统连接与智能体运行能力。</p><ul className="feature-list"><li>平台统一部署与运营运行环境</li><li>明确云端数据范围、租户隔离与访问权限</li><li>按接口和数据条件确认企业系统连接方式</li></ul></article>
