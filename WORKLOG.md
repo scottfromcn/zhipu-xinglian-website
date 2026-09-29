@@ -248,3 +248,4 @@
 - 新增共用 ArchitectureDiagram 组件；OfficeAI、工业平台页各嵌入确认图稿的 WebP 版本，新增查看大图、下载两页 PPT、文字说明和业务导航锚点。移动端保留完整图示预览，并以正文说明关键关系。
 - 生产构建、变更 TSX ESLint、git diff 检查通过。Playwright 实测两页在 1440px / 390px 下图片正常、无横向溢出、单一 h1、无页面错误；四次大图打开与 PPT 下载均成功，下载文件具有有效 ZIP/PPTX 文件头（26,618 bytes）。已目视检查网页桌面版及手机端完整架构区。
 - 本地生产预览重新启动于 `http://127.0.0.1:3000`。发布沿用现有 GitHub 与 Cloudflare Pages 项目，发布结果在下方补记。
+- 发布完成：`4d5798b` 已推送 GitHub；Cloudflare 部署 `https://657ddbd6.zhipu-xinglian.pages.dev` 成功。正式域名 `https://suzhouzp.top` 的两个业务页、两张 WebP 及 PPT 下载均成功访问，响应内容 SHA-256 与本地产物一致。
