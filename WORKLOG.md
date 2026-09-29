@@ -249,3 +249,12 @@
 - 生产构建、变更 TSX ESLint、git diff 检查通过。Playwright 实测两页在 1440px / 390px 下图片正常、无横向溢出、单一 h1、无页面错误；四次大图打开与 PPT 下载均成功，下载文件具有有效 ZIP/PPTX 文件头（26,618 bytes）。已目视检查网页桌面版及手机端完整架构区。
 - 本地生产预览重新启动于 `http://127.0.0.1:3000`。发布沿用现有 GitHub 与 Cloudflare Pages 项目，发布结果在下方补记。
 - 发布完成：`4d5798b` 已推送 GitHub；Cloudflare 部署 `https://657ddbd6.zhipu-xinglian.pages.dev` 成功。正式域名 `https://suzhouzp.top` 的两个业务页、两张 WebP 及 PPT 下载均成功访问，响应内容 SHA-256 与本地产物一致。
+
+## 2026-09-29：移除供应商展示并改用原生 SVG
+
+- 用户要求不出现供应商名称，并解决图稿清晰度问题。将 OfficeAI 与工业平台网页图稿统一重建为原生 SVG；复用 PPT 生成代码中的文字、组件与箭头坐标，支持任意比例缩放，无嵌入位图。
+- 从工业图与 PPT 中移除供应商展示及对应脚注；解包扫描 PPT 页面、备注和全部 XML，确认不存在四家供应商名称。图稿仍保留三种方案形态、两种部署方式、模型供给及双层可信。
+- 网页切换至 SVG，增加 SVG 下载。旧 WebP 和旧 PPT 从公开构建删除，并配置旧链接 301 至新版，保留历史文档图稿。
+- 交付 `public/architecture/officeai.svg`（9,157 bytes）、`public/architecture/industrial-agent.svg`（10,746 bytes）及两页可编辑 `public/downloads/officeai-industrial-architecture-2026-09-29-v2.pptx`。
+- 验收：构建、变更 TSX lint 与 diff 检查通过；SVG 有真实文本及 6 / 9 条定向路径，无 image 元素；浏览器测量所有文字均未超出预留宽度。逐图目视检查及 400% 放大检查通过，PPT 导出后重新导入渲染复核。
+- 浏览器验收两页各在 1440px、390px 下无横向溢出或页面错误，大图打开、SVG 下载和新版 PPT 下载均成功。沿用现有 GitHub / Cloudflare 发布流程，结果在下方补记。

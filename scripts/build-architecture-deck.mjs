@@ -8,17 +8,22 @@ if (!RUNTIME_NODE_MODULES || !PRESENTATIONS_SKILL_DIR || !RUNTIME_PYTHON) throw 
 const { Presentation, PresentationFile, FileBlob } = await import(pathToFileURL(path.join(RUNTIME_NODE_MODULES, '@oai/artifact-tool/dist/artifact_tool.mjs')));
 const { finalizePresentation } = await import(pathToFileURL(path.join(PRESENTATIONS_SKILL_DIR, 'container_tools/artifact_tool_utils.mjs')));
 const root = process.cwd();
-const build = path.join(root, '.codex-build/architecture-deck');
-const output = path.join(root, 'public/downloads/officeai-industrial-architecture-2026-09-29.pptx');
+const build = path.join(root, '.codex-build/architecture-deck-svg');
+const output = path.join(root, 'public/downloads/officeai-industrial-architecture-2026-09-29-v2.pptx');
 await fs.mkdir(build, { recursive: true });
 await fs.mkdir(path.dirname(output), { recursive: true });
 const ppt = Presentation.create({ slideSize: { width: 1600, height: 1200 } });
 const C = { ink: '#131212', gray: '#5E5E66', blue: '#134CFF', border: '#DFE4EE', bg: '#F7F8FA', white: '#FFFFFF' };
 const font = 'Arial Unicode MS';
+// Use the same coordinates and copy for editable PPT objects and true vector SVG.
+const svgSlides = new Map();
+const escapeXml = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 function rect(s, x, y, w, h, fill=C.white, border=C.border) {
+  svgSlides.get(s).push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="${fill}" stroke="${border}"/>`);
   return s.shapes.add({ geometry:'rect', position:{left:x,top:y,width:w,height:h}, fill, line:{fill:border,width:1}, borderRadius:8 });
 }
 function text(s, value, x, y, w, h=35, size=24, color=C.ink, bold=false) {
+  svgSlides.get(s).push(`<text x="${x}" y="${y+h/2}" dominant-baseline="central" font-size="${size}" font-weight="${bold?600:400}" fill="${color}" data-max-width="${w}">${escapeXml(value)}</text>`);
   const t=s.shapes.add({geometry:'textbox',name:value.slice(0,30),position:{left:x,top:y,width:w,height:h},fill:'none',line:{fill:'none',width:0}});
   t.text=value;
   t.text.style={typeface:font,fontSize:size,bold,color,autoFit:'none',wrap:'none',insets:{top:0,bottom:0,left:0,right:0},verticalAlignment:'middle'};
@@ -31,12 +36,14 @@ function card(s,x,y,w,h,title,lines,opts={}) {
   return box;
 }
 function arrow(s,x1,y1,x2,y2,label='',dashed=false,labelX,labelY,labelW=150) {
+  svgSlides.get(s).push(`<path d="M ${x1} ${y1} L ${x2} ${y2}" fill="none" stroke="${dashed?'#8590A5':C.blue}" stroke-width="2"${dashed?' stroke-dasharray="7 6"':''} marker-end="url(#${dashed?'flow':'call'}-arrow)"/>`);
   const pin=(x,y)=>s.shapes.add({geometry:'rect',position:{left:x,top:y,width:.1,height:.1},fill:'none',line:{fill:'none',width:0}});
   const a=pin(x1,y1),b=pin(x2,y2);
   s.shapes.connect(a,b,{kind:'straight',line:{fill:dashed? '#8590A5':C.blue,width:2,style:dashed?'dashed':'solid'},tail:{type:'triangle',width:'med',length:'med'}});
   if(label)text(s,label,labelX??Math.min(x1,x2),labelY??Math.min(y1,y2)-30,labelW,26,20,dashed?C.gray:C.blue);
 }
 function title(s,t,sub) {
+  svgSlides.set(s, []);
   s.background.fill=C.bg;
   text(s,t,48,26,1460,66,48,C.ink,true);
   text(s,sub,48,99,1470,36,26,C.gray);
@@ -85,7 +92,7 @@ function footer(s,y=1070) {
 {
   const s=ppt.slides.add();
   title(s,'工业智能体平台','三种方案形态 · 统一评测接入 · 两种部署方式');
-  text(s,'厂商示例：圆木智能 · 炽橙科技 · 同元软件 · 浩辰科技 · 等',48,145,1500,30,22,C.gray);
+  text(s,'方案形态与接入',48,145,1500,30,22,C.gray);
   const x=[48,570,1092], w=460;
   card(s,x[0],196,w,96,'专业模型',['行业推理 · 识别 · 预测']);
   card(s,x[1],196,w,96,'工业智能体',['面向特定业务任务的 Agent']);
@@ -117,8 +124,23 @@ function footer(s,y=1070) {
   card(s,814,929,738,134,'私有化一体机｜客户侧可信环境',['模型接入 · Agent 运行 · 应用集成 · 连接器 · 知识库 · 治理','按配置部署模型与组件 · 可仅用内部模型，关闭外部通道'],{titleSize:27,size:20});
   text(s,'SaaS 平台 ≠ 外部模型 API；私有化也可按策略使用外部模型。部署支持以适配结果为准。',48,1073,1490,28,20,C.gray);
   text(s,'业务可信：评测、溯源、复核    ｜    数据安全可信：可信环境、最小权限、数据边界',48,1111,1490,30,22,C.ink);
-  text(s,'虚线：评测与接入流程；蓝色实线：调用请求（响应省略）。厂商仅为候选示例，不表示已合作或接入。',48,1155,1490,26,19,C.gray);
-  s.speakerNotes.textFrame.setText('内容来自用户确认的工业智能体 v2 图（docs/diagrams/industrial-agent-components-token-2026-09-29-v2.png）。样式参考 https://bigmodel.cn/glm-coding 。三种形态分别接入 TokenHub、Agent Runtime、应用入口/API/Connector。厂商为用户指定候选示例，不表示已合作或完成适配。平台交付方式与模型供给互相独立，各方案实际部署支持以评测和适配结果为准。');
+  text(s,'虚线：评测与接入流程；蓝色实线：调用请求方向（响应省略）。',48,1155,1490,26,19,C.gray);
+  s.speakerNotes.textFrame.setText('内容基于用户确认的工业智能体架构，按最新要求移除供应商展示。样式参考 https://bigmodel.cn/glm-coding 。三种形态分别接入 TokenHub、Agent Runtime、应用入口/API/Connector。平台交付方式与模型供给互相独立，各方案实际部署支持以评测和适配结果为准。');
+}
+
+await fs.mkdir(path.join(root,'public/architecture'),{recursive:true});
+let index=0;
+for(const elements of svgSlides.values()) {
+  const name=['officeai','industrial-agent'][index];
+  const heading=['OfficeAI 办公智能','工业智能体平台'][index++];
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img" aria-labelledby="title description">
+<title id="title">${heading}架构图</title>
+<desc id="description">${index===1?'客户私有化可信环境中的组件协同与内外部模型调用。':'三种方案形态统一评测后分别接入；模型供给独立于 SaaS 与私有化部署方式。'}</desc>
+<defs><marker id="call-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#134CFF"/></marker><marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#8590A5"/></marker></defs>
+<rect width="1600" height="1200" fill="#F7F8FA"/>
+<g font-family="MiSans, 'PingFang SC', 'Microsoft YaHei', 'Arial Unicode MS', sans-serif">${elements.join('\n')}</g>
+</svg>\n`;
+  await fs.writeFile(path.join(root,'public/architecture',`${name}.svg`),svg);
 }
 
 const candidate=path.join(build,'candidate.pptx');

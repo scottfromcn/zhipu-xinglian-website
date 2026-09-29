@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img" aria-labelledby="title description">
+<title id="title">工业智能体平台架构图</title>
+<desc id="description">三种方案形态统一评测后分别接入；模型供给独立于 SaaS 与私有化部署方式。</desc>
+<defs><marker id="call-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#134CFF"/></marker><marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#8590A5"/></marker></defs>
+<rect width="1600" height="1200" fill="#F7F8FA"/>
+<g font-family="MiSans, 'PingFang SC', 'Microsoft YaHei', 'Arial Unicode MS', sans-serif"><text x="48" y="59" dominant-baseline="central" font-size="48" font-weight="600" fill="#131212" data-max-width="1460">工业智能体平台</text>
+<text x="48" y="117" dominant-baseline="central" font-size="26" font-weight="400" fill="#5E5E66" data-max-width="1470">三种方案形态 · 统一评测接入 · 两种部署方式</text>
+<text x="48" y="160" dominant-baseline="central" font-size="22" font-weight="400" fill="#5E5E66" data-max-width="1500">方案形态与接入</text>
+<rect x="48" y="196" width="460" height="96" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="70" y="231" dominant-baseline="central" font-size="29" font-weight="600" fill="#131212" data-max-width="416">专业模型</text>
+<text x="70" y="274.5" dominant-baseline="central" font-size="22" font-weight="400" fill="#5E5E66" data-max-width="416">行业推理 · 识别 · 预测</text>
+<rect x="570" y="196" width="460" height="96" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="592" y="231" dominant-baseline="central" font-size="29" font-weight="600" fill="#131212" data-max-width="416">工业智能体</text>
+<text x="592" y="274.5" dominant-baseline="central" font-size="22" font-weight="400" fill="#5E5E66" data-max-width="416">面向特定业务任务的 Agent</text>
+<rect x="1092" y="196" width="460" height="96" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="1114" y="231" dominant-baseline="central" font-size="29" font-weight="600" fill="#131212" data-max-width="416">完整业务应用</text>
+<text x="1114" y="274.5" dominant-baseline="central" font-size="22" font-weight="400" fill="#5E5E66" data-max-width="416">自带界面 · 流程 · 业务逻辑</text>
+<rect x="48" y="325" width="1504" height="68" rx="8" fill="#EDF1F8" stroke="#DFE4EE"/>
+<text x="72" y="359.5" dominant-baseline="central" font-size="28" font-weight="600" fill="#131212" data-max-width="180">场景评测</text>
+<text x="270" y="359.5" dominant-baseline="central" font-size="23" font-weight="400" fill="#5E5E66" data-max-width="1260">真实任务与验收标准｜效果 · 安全 · 时延 · 成本 · 部署适配</text>
+<path d="M 278 292 L 278 325" fill="none" stroke="#8590A5" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#flow-arrow)"/>
+<path d="M 278 393 L 278 430" fill="none" stroke="#8590A5" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#flow-arrow)"/>
+<path d="M 800 292 L 800 325" fill="none" stroke="#8590A5" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#flow-arrow)"/>
+<path d="M 800 393 L 800 430" fill="none" stroke="#8590A5" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#flow-arrow)"/>
+<path d="M 1322 292 L 1322 325" fill="none" stroke="#8590A5" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#flow-arrow)"/>
+<path d="M 1322 393 L 1322 430" fill="none" stroke="#8590A5" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#flow-arrow)"/>
+<rect x="48" y="430" width="425" height="132" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="70" y="465" dominant-baseline="central" font-size="29" font-weight="600" fill="#131212" data-max-width="381">TokenHub</text>
+<text x="70" y="508.5" dominant-baseline="central" font-size="21" font-weight="400" fill="#5E5E66" data-max-width="381">模型服务接入与统一路由</text>
+<text x="70" y="539.5" dominant-baseline="central" font-size="21" font-weight="400" fill="#5E5E66" data-max-width="381">模型选择 · 配额 · 计量 · 审计</text>
+<rect x="640" y="430" width="395" height="132" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="662" y="465" dominant-baseline="central" font-size="29" font-weight="600" fill="#131212" data-max-width="351">Agent Runtime</text>
+<text x="662" y="508.5" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="351">智能体接入与运行适配</text>
+<text x="662" y="539.5" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="351">任务编排 · 执行监控 · 异常处理</text>
+<rect x="1092" y="430" width="460" height="132" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="1114" y="465" dominant-baseline="central" font-size="29" font-weight="600" fill="#131212" data-max-width="416">应用集成</text>
+<text x="1114" y="508.5" dominant-baseline="central" font-size="22" font-weight="400" fill="#5E5E66" data-max-width="416">应用入口 / API / Connector</text>
+<text x="1114" y="539.5" dominant-baseline="central" font-size="22" font-weight="400" fill="#5E5E66" data-max-width="416">保留原有界面与业务流程</text>
+<path d="M 640 496 L 473 496" fill="none" stroke="#134CFF" stroke-width="2" marker-end="url(#call-arrow)"/>
+<text x="505" y="472" dominant-baseline="central" font-size="20" font-weight="400" fill="#134CFF" data-max-width="130">模型调用</text>
+<rect x="48" y="586" width="1504" height="74" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="70" y="611" dominant-baseline="central" font-size="22" font-weight="600" fill="#131212" data-max-width="490">Connectors｜连接系统与设备</text>
+<text x="576" y="611" dominant-baseline="central" font-size="22" font-weight="600" fill="#131212" data-max-width="490">知识库｜工艺、规则与经验</text>
+<text x="1080" y="611" dominant-baseline="central" font-size="22" font-weight="600" fill="#131212" data-max-width="458">平台治理｜权限、发布与审计</text>
+<text x="70" y="642" dominant-baseline="central" font-size="19" font-weight="400" fill="#5E5E66" data-max-width="1450">运行时按权限调用系统与检索知识；完整应用按接口条件集成。</text>
+<text x="48" y="693.5" dominant-baseline="central" font-size="28" font-weight="600" fill="#131212" data-max-width="1450">模型供给｜独立于平台部署方式</text>
+<rect x="48" y="728" width="425" height="104" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="70" y="763" dominant-baseline="central" font-size="26" font-weight="600" fill="#131212" data-max-width="381">内部 Token</text>
+<text x="70" y="806.5" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="381">环境内模型：算力、质量与内部额度</text>
+<rect x="640" y="728" width="350" height="104" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="662" y="763" dominant-baseline="central" font-size="26" font-weight="600" fill="#131212" data-max-width="306">TokenHub</text>
+<text x="662" y="806.5" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="306">按任务与数据策略路由</text>
+<rect x="1157" y="728" width="395" height="104" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="1179" y="763" dominant-baseline="central" font-size="26" font-weight="600" fill="#131212" data-max-width="351">外部 Token · 可选</text>
+<text x="1179" y="806.5" dominant-baseline="central" font-size="18" font-weight="400" fill="#5E5E66" data-max-width="351">外部 API：网络、授权与供应商额度</text>
+<path d="M 640 782 L 473 782" fill="none" stroke="#134CFF" stroke-width="2" marker-end="url(#call-arrow)"/>
+<text x="510" y="758" dominant-baseline="central" font-size="20" font-weight="400" fill="#134CFF" data-max-width="120">内部路由</text>
+<path d="M 990 782 L 1157 782" fill="none" stroke="#134CFF" stroke-width="2" marker-end="url(#call-arrow)"/>
+<text x="1017" y="758" dominant-baseline="central" font-size="20" font-weight="400" fill="#134CFF" data-max-width="130">允许外发</text>
+<text x="48" y="854" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="1490">Token 为模型推理用量；非生成式专业模型按其接口与计量方式接入。</text>
+<text x="48" y="897.5" dominant-baseline="central" font-size="28" font-weight="600" fill="#131212" data-max-width="1490">部署方式｜同一套平台能力，按方案确认适配</text>
+<rect x="48" y="929" width="738" height="134" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="70" y="964" dominant-baseline="central" font-size="27" font-weight="600" fill="#131212" data-max-width="694">SaaS｜平台运营的可信云环境</text>
+<text x="70" y="1007.5" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="694">模型接入 · Agent 运行 · 应用集成 · 连接器 · 知识库 · 治理</text>
+<text x="70" y="1038.5" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="694">租户隔离 · 按授权连接企业系统 · 明确上云数据范围</text>
+<rect x="814" y="929" width="738" height="134" rx="8" fill="#FFFFFF" stroke="#DFE4EE"/>
+<text x="836" y="964" dominant-baseline="central" font-size="27" font-weight="600" fill="#131212" data-max-width="694">私有化一体机｜客户侧可信环境</text>
+<text x="836" y="1007.5" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="694">模型接入 · Agent 运行 · 应用集成 · 连接器 · 知识库 · 治理</text>
+<text x="836" y="1038.5" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="694">按配置部署模型与组件 · 可仅用内部模型，关闭外部通道</text>
+<text x="48" y="1087" dominant-baseline="central" font-size="20" font-weight="400" fill="#5E5E66" data-max-width="1490">SaaS 平台 ≠ 外部模型 API；私有化也可按策略使用外部模型。部署支持以适配结果为准。</text>
+<text x="48" y="1126" dominant-baseline="central" font-size="22" font-weight="400" fill="#131212" data-max-width="1490">业务可信：评测、溯源、复核    ｜    数据安全可信：可信环境、最小权限、数据边界</text>
+<text x="48" y="1168" dominant-baseline="central" font-size="19" font-weight="400" fill="#5E5E66" data-max-width="1490">虚线：评测与接入流程；蓝色实线：调用请求方向（响应省略）。</text></g>
+</svg>
